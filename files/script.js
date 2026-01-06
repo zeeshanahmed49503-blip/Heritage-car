@@ -54,6 +54,7 @@ let nav = document.querySelector("#HEADER");
 
 let name = localStorage.getItem("username")
 
+// nav set karo
 nav.innerHTML = `
 <nav>
     <div class="nav-links">
@@ -67,11 +68,16 @@ nav.innerHTML = `
 
     <div class="user-profile">
         <img src="files/assets/user.png">
-        <span>${name}</span>
+        <span id="NullName">${name || ""}</span>
         <i class="arrow-down"></i>
     </div>
 </nav>
 `;
+
+
+if (!name || name === "Null" || name === "") {
+    window.location.href = "files/createAcc.html";
+}
 
 
 let footer = document.querySelector("footer");
